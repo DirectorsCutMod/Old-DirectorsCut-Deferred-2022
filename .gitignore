@@ -17,8 +17,11 @@ ipch
 *.sdf
 *.opensdf
 *.idb
-*.vcxproj
-*.sln
+
+# The Alien Swarm SDK does not provide a
+# VPC environment to create a solution.
+# *.vcxproj
+# *.sln
 
 # OSX/Linux build products
 *.mak
