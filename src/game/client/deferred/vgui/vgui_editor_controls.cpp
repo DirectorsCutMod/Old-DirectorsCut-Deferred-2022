@@ -30,7 +30,7 @@ CVGUILightEditor_Controls::CVGUILightEditor_Controls( Panel *pParent )
 
 	SetCloseButtonVisible( false );
 	SetSizeable( false );
-	SetTitle( "Main controls", false );
+	//SetTitle( "Main controls", false );
 
 	OnLevelSpawn();
 }

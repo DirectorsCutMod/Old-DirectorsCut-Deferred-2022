@@ -14,15 +14,18 @@
     <ProjectName>game_shader_generic_deferred</ProjectName>
     <ProjectGuid>{C8D2DC83-E117-7576-7B43-10C844264C51}</ProjectGuid>
     <RootNamespace>stdshader_dx9-2005</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120_xp</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -53,11 +56,11 @@
     <CustomBuildStep>
       <Message>
       </Message>
-      <Command>if exist "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).dll" attrib -r "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).dll"
-copy "$(TargetDir)"$(ProjectName).dll "$(appsDir)\Sourcemods\$(modName)\bin"
-if exist "$(TargetDir)"$(ProjectName).map copy "$(TargetDir)"$(ProjectName).map "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).map"</Command>
-      <Outputs>$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).dll;$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).map;%(Outputs)</Outputs>
-      <Inputs>$(TargetPath) $(appsDir) $(modName) $(ProjectName)</Inputs>
+      <Command>if exist "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).dll" attrib -r "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).dll"
+copy $(TargetDir)$(ProjectName).dll "$(TargetDir)..\..\..\..\build\$(modName)\bin"
+if exist $(TargetDir)$(ProjectName).map copy $(TargetDir)$(ProjectName).map "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).map"</Command>
+      <Outputs>$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).dll;$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).map;%(Outputs)</Outputs>
+      <Inputs>$(TargetPath) $(modName) $(ProjectName)</Inputs>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>Disabled</Optimization>
@@ -108,6 +111,7 @@ if exist "$(TargetDir)"$(ProjectName).map copy "$(TargetDir)"$(ProjectName).map 
       </BaseAddress>
       <TargetMachine>MachineX86</TargetMachine>
       <LinkErrorReporting>PromptImmediately</LinkErrorReporting>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <Manifest>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -124,11 +128,11 @@ if exist "$(TargetDir)"$(ProjectName).map copy "$(TargetDir)"$(ProjectName).map 
     <CustomBuildStep>
       <Message>
       </Message>
-      <Command>if exist "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).dll" attrib -r "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).dll"
-copy "$(TargetDir)"$(ProjectName).dll "$(appsDir)\Sourcemods\$(modName)\bin"
-if exist "$(TargetDir)"$(ProjectName).map copy "$(TargetDir)"$(ProjectName).map "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).map"</Command>
-      <Outputs>$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).dll;$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).map;%(Outputs)</Outputs>
-      <Inputs>$(TargetPath) $(appsDir) $(modName) $(ProjectName)</Inputs>
+      <Command>if exist "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).dll" attrib -r "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).dll"
+copy $(TargetDir)$(ProjectName).dll "$(TargetDir)..\..\..\..\build\$(modName)\bin"
+if exist $(TargetDir)$(ProjectName).map copy $(TargetDir)$(ProjectName).map "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).map"</Command>
+      <Outputs>$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).dll;$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).map;%(Outputs)</Outputs>
+      <Inputs>$(TargetPath) $(modName) $(ProjectName)</Inputs>
     </CustomBuildStep>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
@@ -183,6 +187,7 @@ if exist "$(TargetDir)"$(ProjectName).map copy "$(TargetDir)"$(ProjectName).map 
       </BaseAddress>
       <TargetMachine>MachineX86</TargetMachine>
       <LinkErrorReporting>PromptImmediately</LinkErrorReporting>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <Manifest>
       <SuppressStartupBanner>true</SuppressStartupBanner>

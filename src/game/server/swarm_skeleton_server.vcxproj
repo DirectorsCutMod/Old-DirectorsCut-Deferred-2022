@@ -14,15 +14,18 @@
     <ProjectName>server</ProjectName>
     <ProjectGuid>{5F66F048-1D65-4D70-A050-12AB030009BE}</ProjectGuid>
     <RootNamespace>Server Episodic</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120_xp</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -69,12 +72,12 @@
     <CustomBuildStep>
       <Message>
       </Message>
-      <Command>if exist "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).dll" attrib -r "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).dll"
-copy "$(TargetDir)"$(ProjectName).dll "$(appsDir)\Sourcemods\$(modName)\bin"
-if exist "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).pdb" attrib -r "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).pdb"
-if exist "$(TargetDir)"$(ProjectName).pdb copy "$(TargetDir)"$(ProjectName).pdb "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).pdb"</Command>
-      <Outputs>$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).dll;$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).pdb;%(Outputs)</Outputs>
-      <Inputs>$(TargetPath) $(appsDir) $(modName) $(ProjectName)</Inputs>
+      <Command>if exist "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).dll" attrib -r "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).dll"
+copy $(TargetDir)$(ProjectName).dll "$(TargetDir)..\..\..\..\build\$(modName)\bin"
+if exist "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).pdb" attrib -r "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).pdb"
+if exist $(TargetDir)$(ProjectName).pdb copy $(TargetDir)$(ProjectName).pdb "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).pdb"</Command>
+      <Outputs>$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).dll;$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).pdb;%(Outputs)</Outputs>
+      <Inputs>$(TargetPath) $(modName) $(ProjectName)</Inputs>
     </CustomBuildStep>
     <ClCompile>
       <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
@@ -125,6 +128,7 @@ if exist "$(TargetDir)"$(ProjectName).pdb copy "$(TargetDir)"$(ProjectName).pdb 
       </BaseAddress>
       <TargetMachine>MachineX86</TargetMachine>
       <LinkErrorReporting>PromptImmediately</LinkErrorReporting>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <Manifest>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -201,6 +205,7 @@ if exist "$(TargetDir)"$(ProjectName).pdb copy "$(TargetDir)"$(ProjectName).pdb 
       </BaseAddress>
       <TargetMachine>MachineX86</TargetMachine>
       <LinkErrorReporting>PromptImmediately</LinkErrorReporting>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <Manifest>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -219,12 +224,12 @@ if exist "$(TargetDir)"$(ProjectName).pdb copy "$(TargetDir)"$(ProjectName).pdb 
       </Message>
     </PostBuildEvent>
     <CustomBuildStep>
-      <Command>if exist "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).dll" attrib -r "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).dll"
-copy "$(TargetDir)"$(ProjectName).dll "$(appsDir)\Sourcemods\$(modName)\bin"
-if exist "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).pdb" attrib -r "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).pdb"
-if exist "$(TargetDir)"$(ProjectName).pdb copy "$(TargetDir)"$(ProjectName).pdb "$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).pdb"</Command>
-      <Outputs>$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).dll;$(appsDir)\Sourcemods\$(modName)\bin\$(ProjectName).pdb;%(Outputs)</Outputs>
-      <Inputs>$(TargetPath) $(appsDir) $(modName) $(ProjectName)</Inputs>
+      <Command>if exist "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).dll" attrib -r "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).dll"
+copy $(TargetDir)$(ProjectName).dll "$(TargetDir)..\..\..\..\build\$(modName)\bin"
+if exist "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).pdb" attrib -r "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).pdb"
+if exist $(TargetDir)$(ProjectName).pdb copy $(TargetDir)$(ProjectName).pdb "$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).pdb"</Command>
+      <Outputs>$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).dll;$(TargetDir)..\..\..\..\build\$(modName)\bin\$(ProjectName).pdb;%(Outputs)</Outputs>
+      <Inputs>$(TargetPath) $(modName) $(ProjectName)</Inputs>
     </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemGroup>

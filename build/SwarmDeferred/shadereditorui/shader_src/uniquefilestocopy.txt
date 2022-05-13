@@ -12,5 +12,6 @@ common_flashlight_fxc.h
 common_parallax.h
 ..\..\..\..\common\alien swarm\bin\shadercompile.exe
 ..\..\..\..\common\alien swarm\bin\shadercompile_dll.dll
-pp_ssao_merge_vs30.fxc
-pp_ssao_merge_ps30.fxc
+000004_postproc_drunk_pos_preview_vs30.fxc
+000004_postproc_drunk_preview_vs30.fxc
+000004_postproc_drunk_preview_ps30.fxc

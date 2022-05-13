@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <appsDir>D:\Steam\Steamapps</appsDir>
+    <appsDir>C:\Program Files (x86)\Steam\steamapps</appsDir>
     <modName>SwarmDeferred</modName>
     <debugCommandLine>-sw -w 1600 -h 900 -allowdebug -console -shaderedit</debugCommandLine>
   </PropertyGroup>

@@ -39,7 +39,7 @@ if /i "%6" == "-dx9_30" goto dx_sdk_dx9_30
 goto dx_sdk_end
 :dx_sdk_dx9_30
 			set DIRECTX_SDK_VER=pc09.30
-			set DIRECTX_SDK_BIN_DIR=dx10sdk\utilities\dx9_30
+			set DIRECTX_SDK_BIN_DIR=dx9sdk\utilities
 			goto dx_sdk_end
 :dx_sdk_end
 
